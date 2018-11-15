@@ -12,4 +12,24 @@ class ItemTest < ActiveSupport::TestCase
     assert item.url
     assert item.available?
   end
+
+  test "validates name" do
+    item = Item.new
+    item.valid?
+    assert item.errors.messages == {:name=>["can't be blank"]}
+  end
+
+  test "ignores url unless present" do
+    item = Item.new(name: "name")
+    assert item.valid?
+  end
+
+  test "validates present url" do
+    item = Item.new(name: "name")
+    item.url = "http://www.amazon.com"
+    assert item.valid?
+    item.url = "sdf"
+    item.valid?
+    assert item.errors.messages == {url: ["is invalid"]}
+  end
 end

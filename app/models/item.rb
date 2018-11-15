@@ -1,3 +1,6 @@
 class Item < ApplicationRecord
   has_and_belongs_to_many :lists
+
+  validates :name, presence: true
+  validates :url, format: { with: URI.regexp }, allow_blank: true
 end
