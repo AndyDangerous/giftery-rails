@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: "A thing"
+  description: "A thing I want"
+  url: "www.internet"
+  available?: true
+
+two:
+  id: 2
+  name: "Another thing"
+  description: "Another thing I want"
+  url: "www.internet"
+  available?: false
