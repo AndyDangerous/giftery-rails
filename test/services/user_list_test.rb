@@ -16,5 +16,4 @@ class UserListTest < ActiveSupport::TestCase
 
     assert_equal UserList.new(list).list_id, list_id
   end
-
 end
