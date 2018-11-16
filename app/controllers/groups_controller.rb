@@ -6,6 +6,6 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @user_lists = @group.user_lists
+    @user_lists = @group.user_lists(except: current_user)
   end
 end
