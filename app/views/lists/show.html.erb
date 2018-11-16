@@ -1,0 +1,21 @@
+<h1> <%= @list.user.name %>'s List </h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>URL</th>
+    <th>available?</th>
+    <th></th>
+  </tr>
+
+  <% @list.items.each do |item| %>
+    <tr>
+      <td><%= link_to item.name, item_path(item) %></td>
+      <td><%= item.description %></td>
+      <td><%= item.url %></td>
+      <td><%= item.available? %></td>
+      <%# <td><%= link_to 'gotten', edit_item_path(item) %1></td> %>
+    </tr>
+  <% end %>
+</table>
