@@ -10,7 +10,6 @@ class ItemTest < ActiveSupport::TestCase
     assert item.name
     assert item.description
     assert item.url
-    assert item.available?
   end
 
   test "validates name" do

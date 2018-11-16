@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class GroupTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "groups have lists" do
+    group = Group.first
+
+    assert group.lists.length == 2
+  end
 end

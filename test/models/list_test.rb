@@ -7,4 +7,12 @@ class ListTest < ActiveSupport::TestCase
 
     list.items.first == item
   end
+
+  test "fixtures, I guess" do
+    list  = List.first
+
+    assert list.user.is_a? User
+    assert list.group.is_a? Group
+    assert list.items.first.is_a? Item
+  end
 end

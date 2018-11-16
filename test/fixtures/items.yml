@@ -1,14 +1,10 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  id: 1
+first_item:
   name: "A thing"
   description: "A thing I want"
   url: "www.internet"
   available?: true
 
-two:
-  id: 2
+second_item:
   name: "Another thing"
   description: "Another thing I want"
   url: "www.internet"
