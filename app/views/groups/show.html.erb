@@ -1,0 +1,16 @@
+<h1> <%= @group.name %> </h1>
+
+<p>This is a list of people in your group. Click on a person&#39;s name to see their list.</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+  <% @user_lists.each do |user_list| %>
+    <tr>
+      <td><%= link_to user_list.user_name, list_path(user_list.list_id) %></td>
+    </tr>
+  <% end %>
+</table>
