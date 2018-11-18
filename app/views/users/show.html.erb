@@ -1,0 +1,27 @@
+<h1><%= @user.name %>'s Profile</h1>
+
+<h3>My Groups:</h3>
+<table>
+  <% @user.groups.each do |group| %>
+    <tr>
+      <td> <%= link_to(group.name, group_path(group)) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h3>My Lists</h3>
+<table>
+  <tr>
+    <th>
+    Group Name
+    </th>
+  </tr>
+
+  <% @user.lists.each do |list| %>
+    <tr>
+      <td>
+        <%= link_to(list.group.name, edit_list_path(list)) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
