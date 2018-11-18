@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
   has_many :lists
+  has_many :groups, through: :lists
 
   validates :name, presence: true
 end
