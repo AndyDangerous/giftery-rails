@@ -7,19 +7,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   </head>
 
   <body>
-
-    <% unless flash.empty? %>
-      <script type="text/javascript">
-	<% flash.each do |f| %>
-	    <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-	  toastr['<%= type %>']('<%= f[1] %>');
+    <div class "container">
+      <%= render "layouts/navbar" %>
+      <% unless flash.empty? %>
+	<script type="text/javascript">
+	  <% flash.each do |f| %>
+	      <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+	    toastr['<%= type %>']('<%= f[1] %>');
+	<% end %>
+	</script>
       <% end %>
-      </script>
-    <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>
