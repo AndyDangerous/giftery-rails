@@ -28,3 +28,6 @@
 
 # Ignore database.yml because I might not be cool enough to use ENV VARS
 /config/database.yml
+
+# Ignore ctags
+tags
