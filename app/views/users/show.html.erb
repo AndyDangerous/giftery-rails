@@ -20,7 +20,7 @@
   <% @user.lists.each do |list| %>
     <tr>
       <td>
-        <%= link_to(list.group.name, edit_list_path(list)) %>
+        <%= link_to(list.group.name, list_path(list)) %>
       </td>
     </tr>
   <% end %>
