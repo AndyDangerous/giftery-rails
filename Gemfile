@@ -71,7 +71,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'execjs'
 # gem 'therubyracer'
-gem 'rspec-rails', '~> 3.0.0', group: :test
+# gem 'rspec-rails', '~> 3.0.0', group: :test
 gem 'faker', group: :development
 gem 'better_errors', group: :development
 gem 'binding_of_caller', group: :development
