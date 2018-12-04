@@ -31,3 +31,5 @@
 
 # Ignore ctags
 tags
+
+/vendor/*
