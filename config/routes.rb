@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :lists
-  resources :items
+  resources :items do
+    put 'claim'
+  end
   resources :users
 
   resources :groups

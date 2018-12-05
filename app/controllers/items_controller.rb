@@ -34,6 +34,13 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def claim
+    @item = Item.find(params[:item_id])
+    @item.claim
+
+    redirect_to @item
+  end
+
   private
 
   def item_params

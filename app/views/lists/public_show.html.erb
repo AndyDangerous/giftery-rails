@@ -15,7 +15,9 @@
       <td><%= item.description %></td>
       <td><%= item.url %></td>
       <td><%= item.available? %></td>
-      <%# <td><%= link_to 'gotten', edit_item_path(item) %1></td> %>
+      <% if item.available? %>
+        <td><%= link_to 'Claim', item_claim_path(item), method: :put, class: 'btn btn-primary' %></td>
+      <%end %>
     </tr>
   <% end %>
 </table>
