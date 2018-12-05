@@ -1,5 +1,10 @@
 <h1><%= @user.name %>'s Profile</h1>
 
+<h3>My Groups</h3>
+<p>
+The links below are the names of your groups and their members. 
+Clicking a group name will take you to that Group's page and give you access to the lists of the other people in that group. You can also just click names directly and you will go to that person's list where you can peruse and claim gifts.
+</p>
 <table class="table">
   <tr>
     <th>Group</th>
@@ -16,6 +21,10 @@
 </table>
 
 <h3>My Lists</h3>
+
+<p>
+The links below are the names of groups in which you have a list. Clicking one will take you to your list for that group. From that page, you will be able to add or edit items. You will not be able to see the availability of those items (because where is the fun in that??).
+</p>
 <table class="table">
   <% @user.lists.each do |list| %>
     <tr>
