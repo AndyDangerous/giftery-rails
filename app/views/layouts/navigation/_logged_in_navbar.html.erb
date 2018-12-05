@@ -1,0 +1,31 @@
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      My Lists
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <% current_user.lists.each do |list| %>
+        <%= link_to(list.group.name, list_path(list), class: 'dropdown-item') %>
+      <% end %>
+      <div class="dropdown-divider"></div>
+      <%= link_to("New List", new_list_path, class: 'dropdown-item') %>
+    </div>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      My Groups
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <% current_user.groups.each do |group| %>
+        <%= link_to(group.name, group_path(group), class: 'dropdown-item') %>
+      <% end %>
+      <div class="dropdown-divider"></div>
+      <%= link_to("New Group", new_group_path, class: 'dropdown-item') %>
+    </div>
+  </li>
+</ul>
+<ul class="navbar-nav my-2 my-lg-0">
+  <li class="nav-item">
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'nav-link') %>
+  </li>
+</ul>
