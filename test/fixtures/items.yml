@@ -2,10 +2,10 @@ first_item:
   name: "A thing"
   description: "A thing I want"
   url: "www.internet"
-  available?: true
+  available: true
 
 second_item:
   name: "Another thing"
   description: "Another thing I want"
   url: "www.internet"
-  available?: false
+  available: false

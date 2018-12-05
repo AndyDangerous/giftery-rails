@@ -3,4 +3,13 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :url, format: { with: URI.regexp }, allow_blank: true
+
+  def available?
+    available
+  end
+
+  def claim
+    self.available = false
+    save
+  end
 end
