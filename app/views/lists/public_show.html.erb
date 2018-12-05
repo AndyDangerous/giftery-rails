@@ -1,19 +1,21 @@
 <h1> <%= @list.user.name %>'s List (for <%= @list.group.name %>)</h1>
 
+<p>
+Here is a list of Items <%= @list.user.name %> has requested. Items that are still available (i.e. have not been claimed by somebody) have a "Claim" button next to them. If you want to get this gift then click the "Claim" button and it will become unavailable for others to get.
+</p>
+
 <table class="table">
   <tr>
-    <th>Name</th>
     <th>Description</th>
     <th>URL</th>
     <th>available?</th>
     <th></th>
   </tr>
 
-  <% @list.items.each do |item| %>
+  <% @list.items_ordered_by_availability.each do |item| %>
     <tr>
-      <td><%= link_to item.name, item_path(item) %></td>
       <td><%= item.description %></td>
-      <td><%= item.url %></td>
+      <td><a target="_blank" rel="noopener noreferrer" href=<%=item.url%>><%=item.url%></a></td>
       <td><%= item.available? %></td>
       <% if item.available? %>
         <td><%= link_to 'Claim', item_claim_path(item), method: :put, class: 'btn btn-primary' %></td>
