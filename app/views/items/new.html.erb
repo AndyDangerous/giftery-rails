@@ -15,23 +15,20 @@
 <% end %>
 
 <%= form_with scope: :item, url: items_path, local: true do |form| %>
-  <p>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </p>
 
-  <p>
+  <div class="field">
     <%= form.label :description %><br>
-    <%= form.text_area :description %>
-  </p>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
 
-  <p>
+  <div class="field">
     <%= form.label :url %><br>
-    <%= form.text_field :url %>
-  </p>
+    <%= form.text_field :url, class: 'form-control', placeholder: 'http://www.example.com' %>
+  </div>
 
+  <br>
   <input type="hidden" id="list_id" name="item[list_id]" value=<%= @list_id %> />
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="actions">
+    <%= form.submit "Create", class: "btn btn-primary" %>
+  </div>
 <% end %>

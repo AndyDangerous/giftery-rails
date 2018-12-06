@@ -18,13 +18,15 @@ This will create a new Group. Your List will be created automatically. Other peo
   </div>
 <% end %>
 
-<%= form_with scope: :group, url: groups_path, local: true do |form| %>
-  <p>
-    <%= form.label :group_name %><br>
-    <%= form.text_field :name %>
-  </p>
-
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<form>
+  <%= form_with scope: :group, url: groups_path, local: true do |form| %>
+    <div class='field'>
+      <%= form.label :group_name %><br>
+      <%= form.text_field :name, class: 'form-control', placeholder: 'My Group' %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= form.submit "Create", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</form>
