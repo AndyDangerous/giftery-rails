@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def new
     @list_id = params[:list_id]
+    @group_name = params[:group_name]
   end
 
   def create

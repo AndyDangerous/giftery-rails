@@ -1,6 +1,6 @@
 <h1> <%= @list.user.name %>'s List (for <%= @list.group.name %>)</h1>
 
-<%= link_to 'New List Item', new_item_path(list_id: @list.id), class: 'btn btn-primary', title: "Creates a new item for this list" %>
+<%= link_to 'New List Item', new_item_path(list_id: @list.id, group_name: @list.group.name), class: 'btn btn-primary', title: "Creates a new item for this list" %>
 <br><br>
 
 <table class="table">
