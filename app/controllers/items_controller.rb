@@ -4,10 +4,11 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @list_id = params[:list_id]
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = Item.new_from_params(item_params)
 
     if @item.save
       redirect_to @item
@@ -44,6 +45,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :url)
+    params.require(:item).permit(:name, :description, :url, :list_id)
   end
 end

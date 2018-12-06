@@ -1,23 +1,21 @@
 <h1> <%= @list.user.name %>'s List (for <%= @list.group.name %>)</h1>
 
-<%= link_to 'Add Item', new_item_path %>
+<%= link_to 'New List Item', new_item_path(list_id: @list.id), class: 'btn btn-primary', title: "Creates a new item for this list" %>
+<br><br>
 
 <table class="table">
   <tr>
-    <th>Name</th>
     <th>Description</th>
     <th>URL</th>
-    <th>edit</th>
+    <th>Edit</th>
     <th></th>
   </tr>
 
   <% @list.items.each do |item| %>
     <tr>
-      <td><%= link_to item.name, item_path(item) %></td>
       <td><%= item.description %></td>
-      <td><%= item.url %></td>
+      <td><a target="_blank" rel="noopener noreferrer" href=<%=item.url%>><%=item.url%></a></td>
       <td><%= link_to "Edit", edit_item_path(item)  %></td>
-      <%# <td><%= link_to 'gotten', edit_item_path(item) %1></td> %>
     </tr>
   <% end %>
 </table>
