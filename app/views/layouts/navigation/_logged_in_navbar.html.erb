@@ -7,8 +7,6 @@
       <% current_user.lists.each do |list| %>
         <%= link_to(list.group.name, list_path(list), class: 'dropdown-item') %>
       <% end %>
-      <div class="dropdown-divider"></div>
-      <%= link_to("New List", new_list_path, class: 'dropdown-item') %>
     </div>
   </li>
   <li class="nav-item dropdown">
