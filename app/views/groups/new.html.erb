@@ -1,0 +1,30 @@
+<h1> New Group </h1>
+
+<p>
+This will create a new Group. Your List will be created automatically. Other people will have lists created automatically when they join your group.
+</p>
+
+<% if @group && @group.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@group.errors.count, "error") %> prohibited
+      this group from being saved:
+    </h2>
+    <ul>
+      <% @group.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with scope: :group, url: groups_path, local: true do |form| %>
+  <p>
+    <%= form.label :group_name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
