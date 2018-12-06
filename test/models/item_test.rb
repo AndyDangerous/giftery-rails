@@ -12,12 +12,6 @@ class ItemTest < ActiveSupport::TestCase
     assert item.url
   end
 
-  test "validates name" do
-    item = Item.new
-    item.valid?
-    assert item.errors.messages == {:name=>["can't be blank"]}
-  end
-
   test "ignores url unless present" do
     item = Item.new(name: "name")
     assert item.valid?
