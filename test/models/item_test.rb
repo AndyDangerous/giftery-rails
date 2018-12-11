@@ -25,18 +25,4 @@ class ItemTest < ActiveSupport::TestCase
     item.valid?
     assert item.errors.messages == {url: ["is invalid"]}
   end
-
-  test "builds new item from params with list_id" do
-    params = {"name"=>"name", "description"=>"description", "url"=>"", "list_id"=>"1"}
-
-    item = Item.new_from_params(params)
-    assert item.lists.first.id == 1
-  end
-
-  test "builds new item from params without list_id" do
-    params = {"name"=>"name", "description"=>"description", "url"=>"", "list_id"=>"/"}
-
-    item = Item.new_from_params(params)
-    assert item.lists.empty?
-  end
 end

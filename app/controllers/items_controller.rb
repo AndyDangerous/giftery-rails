@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new_from_params(item_params)
+    @item = ItemBuilder.new_from_params(item_params)
 
     if @item.save
       redirect_to @item
